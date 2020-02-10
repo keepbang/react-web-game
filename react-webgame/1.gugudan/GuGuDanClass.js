@@ -1,5 +1,4 @@
-class GuGuDan extends React.Component{
-
+class GuGuDanClass extends React.Component{
     state = {
         first : Math.ceil(Math.random() * 9),
         second : Math.ceil(Math.random() * 9),
@@ -64,4 +63,4 @@ class GuGuDan extends React.Component{
 
 }
 
-ReactDOM.render(<GuGuDan/>,document.querySelector('#root'));
+ReactDOM.render(<GuGuDanClass/>,document.querySelector('#root'));
