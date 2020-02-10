@@ -1,3 +1,3 @@
 # react
 
-1. web-game
+1. react-webgame : https://www.inflearn.com/course/web-game-React
