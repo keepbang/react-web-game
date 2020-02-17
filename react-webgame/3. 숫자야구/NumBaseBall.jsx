@@ -1,4 +1,4 @@
-import React,{useRef,useState} from 'react';
+import React,{useRef,useState,memo} from 'react';
 import Try from './Try';
 
 function getNumbers(){//숫자 4개를 랜덤으로 뽑는 함수
@@ -11,14 +11,14 @@ function getNumbers(){//숫자 4개를 랜덤으로 뽑는 함수
     return array;
 }
 
-const NumBaseBall = () =>{
+const NumBaseBall = memo(() =>{
 
     const [result,setResult] = useState('');
     const [value,setValue] = useState('');
     const [answer,setAnswer] = useState(getNumbers()); //ex : [1,3,5,7]
     const [tries,setTries] = useState([]);
     const inputRef = useRef(null);
-
+    
     const onSubmitForm = (e) => {
         e.preventDefault();
         if(value === answer.join('')){
@@ -55,6 +55,7 @@ const NumBaseBall = () =>{
                 setValue('');
             }
         }
+        inputRef.current.focus();
     };
 
     const onChangeInput = (e) => {
@@ -65,7 +66,7 @@ const NumBaseBall = () =>{
         <>
             <h1>{result}</h1>
             <form onSubmit={onSubmitForm}>
-                <input maxLength={4} value={value} onChange={onChangeInput}/>
+                <input ref={inputRef} maxLength={4} value={value} onChange={onChangeInput}/>
                 <button>입력!</button>
             </form>
             <div>시도횟수 : {tries.length}</div>
@@ -80,7 +81,7 @@ const NumBaseBall = () =>{
             </ul>
         </>
     )
-}
+});
 
 //export const hello = 'hello' import {hello}
 //export const hello2 = 'hello2' import {hello,hello2}

@@ -12,72 +12,7 @@
     </head>
     <body>
         <div id="root"></div>
-        <script type="text/babel">
-            class LikeButton extends React.Component{
-                state = {
-                    liked:false,
-                    count:0,
-                };
-                
-                clickLike = (e) =>{
-                    this.setState({
-                        liked:true
-                    });
+        <script type="text/babel" src="./test.jsx"/>
 
-
-                    /*this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });
-                    this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });
-                    this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });*/
-
-                    this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });
-                    this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });
-                    this.setState((prevState) => {
-                        return{
-                            count: prevState.count + 1,
-                        }
-                    });
-
-                }
-
-                render(){
-                    return(
-                        <React.Fragment>
-                            <button type="submit"
-                                onClick={this.clickLike}>
-                                {this.state.liked === true ? 'Liked' : 'Like'}
-                            </button>
-                            <div>count : {this.state.count}</div>
-                        </React.Fragment>
-                    );
-                    
-                    //jsx(JS + XML)
-                    
-                }
-
-            }
-        </script>
-        <script type="text/babel">
-            ReactDOM.render(<div><LikeButton/></div>,document.querySelector('#root'));
-        </script>
     </body>
 </html>
