@@ -6,9 +6,16 @@ const ResponseCheck = () => {
     const [message,setMessage] = useState('클릭해서 시작하세요');
     const [result,setResult] = useState([]);
 
-    const onClickScreen = () =>{
+    const onClickScreen = () => {
 
-    }
+    };
+
+    const renderAverage = () => {
+        return result.length === 0
+        ? null
+        : <div>평균 시간 : {result.reduce((a,c) => a + c) / result.length}ms</div>
+    };
+
 
     return (
         <>
@@ -18,7 +25,8 @@ const ResponseCheck = () => {
                 onClick={onClickScreen}>
                 {message}
             </div>
-            <div>평균 시간 : {result.reduce((a,c) => a + c) / result.length}ms</div>
+            {renderAverage()}
+            
         </>
     )
 };
