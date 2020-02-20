@@ -4,6 +4,7 @@ const ResponseCheck = () =>{
     const [state,setState] = useState('waiting');
     const [message,setMessage] = useState('클릭해서 시작하세요');
     const [result,setResult] = useState([]);
+    
     const timeOut = useRef(null);
     const startTime = useRef();
     const endTime = useRef();
