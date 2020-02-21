@@ -4,8 +4,8 @@ import ReactDom from 'react-dom';
 import {hot} from 'react-hot-loader/root';
 
 
-import ResponseCheck from './ResponseCheck';
+import Test from './Test';
 
-const Hot = hot(ResponseCheck);
+const Hot = hot(Test);
 
 ReactDom.render(<Hot/>, document.querySelector('#root'));

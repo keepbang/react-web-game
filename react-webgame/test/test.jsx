@@ -1,15 +1,35 @@
+import React, {useState,useRef,memo} from 'react';
+
 const Test = () => {
-    const [name,setName] = React.useState('bang');
-    const [number,setNumber] = React.useState(10);
-    const inputRef = React.useRef(null);
+    const [name,setName] = useState('bang');
+    const [result,setResult] = useState([]);
+    
+
+    const setArray = (e) =>{
+        e.preventDefault();        
+        setResult((preResult)=>{
+            return [...preResult,name];
+        });
+    }
+    
+    const changeName = (e) => {
+        setName(e.target.value);
+    }
 
     return (
-        <React.Fragment>
-            <div>name : {name}</div>
-            <div>number : {number}</div>
-        </React.Fragment>
+        
+        <>
+            {console.log(result)}
+            <form onSubmit={setArray}>
+              <input value={name} onChange={changeName}></input>
+              <button>배열 입력</button>
+            </form>
+            <div>결과 : {result.map((v) => {
+                return v + " | ";
+            })}
+            </div>
+        </>
     )
 };
 
-
-ReactDOM.render(<Test/>,document.querySelector('#root'));
+export default Test;

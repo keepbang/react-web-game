@@ -1,6 +1,6 @@
-import React, {useState,useRef} from 'react';
+import React, {useState,useRef,memo} from 'react';
 
-const ResponseCheck = () =>{
+const ResponseCheck = memo(() =>{
     const [state,setState] = useState('waiting');
     const [message,setMessage] = useState('클릭해서 시작하세요');
     const [result,setResult] = useState([]);
@@ -40,6 +40,7 @@ const ResponseCheck = () =>{
 
 
     const renderAverage = () => {
+        console.log(result);
         return result.length === 0
         ? null
         : <>
@@ -62,7 +63,7 @@ const ResponseCheck = () =>{
                 
             </>
         )
-};
+});
 
 
 export default ResponseCheck;
