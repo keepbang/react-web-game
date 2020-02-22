@@ -19,7 +19,7 @@ const Test = () => {
     return (
         
         <>
-            {console.log(result)}
+            <div id = "computer" style={{background : `url("https://en.pimg.jp/023/182/267/1/23182267.jpg")`}}/>
             <form onSubmit={setArray}>
               <input value={name} onChange={changeName}></input>
               <button>배열 입력</button>
