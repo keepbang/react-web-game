@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 
 // 클래스의 경우 -> constructor -> render -> ref -> componentDidMount
 // -> (setstate/props 바뀔때  -> shouldComponentUpdate -> render -> componentDidUpdate)
@@ -23,7 +23,7 @@ const computerChoice = (imgCoord) => {
     })[0];
 };
 
-class RSP extends Component {
+class RSP extends PureComponent {
     state = {
         result: '',
         imgCoord:'0',

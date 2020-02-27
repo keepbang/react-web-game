@@ -69,6 +69,7 @@ const RSP = memo(() => {
             interval.current = setInterval(changeHand,100);
         },2000);
         
+        
     };
 
     return(
