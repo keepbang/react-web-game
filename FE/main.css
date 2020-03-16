@@ -1,0 +1,11 @@
+.searchBox {
+    height: 32px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.searchBtn {
+    height: 32px;
+    vertical-align: middle;
+    width: 50px;
+}
