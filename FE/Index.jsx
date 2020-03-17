@@ -26,7 +26,28 @@ const Index = () => {
 
     const getToResponse = async(param) => {
         setParam(param);
-        let responseJson = await service.getDatas(param);
+        // let responseJson = await service.getDatas(param);
+        let responseJson = [{
+            "name" : "250000",
+            "num" : 10
+        },
+        {
+            "name" : "310000",
+            "num" : 7
+        },
+        {
+            "name" : "270000",
+            "num" : 4
+        },
+        {
+            "name" : "320000",
+            "num" : 1
+        },
+        {
+            "name" : "220000",
+            "num" : 4
+        },
+        ];
         setResult(responseJson);
 
         let label = [];
