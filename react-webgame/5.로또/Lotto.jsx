@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
 import Ball from './Ball';
 
 function getWinNumbers(){
@@ -14,7 +14,9 @@ function getWinNumbers(){
 }
 
 const Lotto = () => {
-    const [winNumbers, setWinNumbers] = useState(getWinNumbers());
+    //useMemo는 함수의 값(return)을 기억해서 반복실행안되게함
+    const lottoNumbers = useMemo(() => getWinNumbers(), []);
+    const [winNumbers, setWinNumbers] = useState(lottoNumbers);
     const [winBalls, setWinBalls] = useState([]);
     const [bonus, setBonus] = useState(null);
     const [redo, setRedo] = useState(false);
@@ -42,14 +44,16 @@ const Lotto = () => {
         };
     }, [timeouts.current]);
 
-    const onClickRedo = () => {
+    //useCallback : 함수 자체를 기억한다. 함수 생성자체가 오래걸릴때 사용한다. 자식컴포넌트에 props로 함수를 넘겨줄때 useCallback사용해야함
+    const onClickRedo = useCallback(() => {
         console.log("onClickRedo");
+        console.log(winNumbers);
         setWinNumbers(getWinNumbers());
         setWinBalls([]);
         setBonus(null);
         setRedo(false);
         timeouts.current = [];
-    };
+    },[winNumbers]);
 
     return ( 
         <>
