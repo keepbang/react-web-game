@@ -1,5 +1,5 @@
 import React,{useState,  useCallback, useContext} from 'react';
-import {TableContext} from './Mine'
+import {TableContext, START_GAME} from './Mine'
 
 
 const Form = () => {
